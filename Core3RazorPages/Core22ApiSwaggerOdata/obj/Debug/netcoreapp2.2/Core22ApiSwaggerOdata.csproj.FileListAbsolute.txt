@@ -1,0 +1,17 @@
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\bin\Debug\netcoreapp2.2\Core22ApiSwaggerOdata.deps.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\bin\Debug\netcoreapp2.2\Core22ApiSwaggerOdata.runtimeconfig.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\bin\Debug\netcoreapp2.2\Core22ApiSwaggerOdata.runtimeconfig.dev.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\bin\Debug\netcoreapp2.2\Core22ApiSwaggerOdata.dll
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\obj\Debug\netcoreapp2.2\Core22ApiSwaggerOdata.RazorAssemblyInfo.cache
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\obj\Debug\netcoreapp2.2\Core22ApiSwaggerOdata.RazorAssemblyInfo.cs
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\obj\Debug\netcoreapp2.2\Core22ApiSwaggerOdata.AssemblyInfoInputs.cache
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\obj\Debug\netcoreapp2.2\Core22ApiSwaggerOdata.AssemblyInfo.cs
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\obj\Debug\netcoreapp2.2\Core22ApiSwaggerOdata.RazorTargetAssemblyInfo.cache
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\bin\Debug\netcoreapp2.2\Core22ApiSwaggerOdata.pdb
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\obj\Debug\netcoreapp2.2\Core22ApiSwaggerOdata.dll
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\obj\Debug\netcoreapp2.2\Core22ApiSwaggerOdata.pdb
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\obj\Debug\netcoreapp2.2\Core22ApiSwaggerOdata.csprojAssemblyReference.cache
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22ApiSwaggerOdata\obj\Debug\netcoreapp2.2\Core22ApiSwaggerOdata.genruntimeconfig.cache

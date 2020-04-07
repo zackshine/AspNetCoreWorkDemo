@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+    var tempval = TempData["Notifications"];
+}
+@using Core31MVC.Data
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+<h1>@ViewData["Title"]</h1>
+<h1> @LangDefault["TitleLogin"]</h1>
+<p>Use this page to detail your site's privacy policy.</p>
+<p id="testElement" style="position:absolute">test</p>
+@foreach (String notification in ViewContext.TempData["Notifications"] as ICollection<String>)
+{
+    <div class="notification">
+        <p>
+            @notification/p>
+            <i class="icon-close"></i>
+    </div>
+}
+
+
+<select id="locationSelect" name="states" asp-items="@Html.GetEnumSelectList<LocationType>()">
+</select>
+
+
+
+
+@section Scripts{
+    <script src="~/ScriptJS.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.full.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css" />
+    <script>
+        $(document).ready(function () {
+            $("#locationSelect").select2();
+        });
+    </script>
+}

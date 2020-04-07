@@ -1,0 +1,47 @@
+﻿@model Core31MVC.Controllers.Restaurant
+<div class="row" id="canvas1" style="background-color:green">
+    My Picture Here
+</div>
+<a id="savebutton" class="btn btn-primary">Oluştur</a>
+
+@section Scripts{
+    <script src="~/js/html2canvas.js"></script>
+
+    <script src="~/js/html2canvas.min.js"></script>
+    <script>
+
+     $('#savebutton').click(function () {
+
+        html2canvas($("#canvas1").get(0)).then(function (canvas) {
+
+                    //var aw = document.createElement('a');
+            //var image1 = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+            //console.log(image1);
+            //aw.href = image;
+            //aw.download = '@Guid.NewGuid()-@DateTime.Now-HP1MOB.jpg';
+            //aw.click();
+            var image = canvas.toDataURL("image/jpeg");
+            //console.log(image);
+            //image = image.replace('data:image/jpeg;base64,', '');
+            //console.log(image);
+            var data = {
+                imageData: image,
+                imageName:'@Guid.NewGuid()-@Model.RestaurantName-@DateTime.Now-HP1MOB.jpg'
+                    //"restNameTest.jpg"
+            };
+            $.ajax({
+                type: 'POST',
+                url: '/Home/SaveImage',
+                data: data,
+                //contentType: 'application/json; charset=utf-8',
+                //dataType: 'json',
+                success: function (msg) {
+                    alert('Image saved successfully !');
+                }
+            });
+
+        });
+
+    });
+    </script>
+}

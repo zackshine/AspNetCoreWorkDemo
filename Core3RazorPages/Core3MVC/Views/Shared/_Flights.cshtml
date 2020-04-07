@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Core3MVC.Models.Passengers.FlightsViewModel>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Attended)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdF)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Destination)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Attended)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "DeleteF", new {IdC= ViewData["IdC"], IdF = item.IdF })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

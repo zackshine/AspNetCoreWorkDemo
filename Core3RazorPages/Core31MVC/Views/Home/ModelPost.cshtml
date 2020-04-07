@@ -1,0 +1,28 @@
+﻿@model Model
+@{
+    ViewData["Title"] = "ModelPost";
+}
+
+<h1>ModelPost</h1>
+
+<form asp-action="Edit">
+    @Html.AntiForgeryToken()
+    <input asp-for="Id" type="hidden" />
+    <div class="form-group required">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" type="text" />
+        <span asp-validation-for="Description"></span>
+    </div>
+    @if (Model.Files.Any())
+    {
+        for (var i = 0; i < Model.Files.Count; i++)
+        {
+            <input asp-for="@Model.Files[i].Id" type="hidden" />
+            <div class="form-group">
+                <input asp-for="@Model.Files[i].Link" type="checkbox" />
+            </div>
+            @Model.Files[i].Description
+        }
+    }
+    <button type="submit">Save</button>
+</form>

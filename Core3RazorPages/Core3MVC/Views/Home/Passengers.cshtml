@@ -1,0 +1,50 @@
+﻿@model Core3MVC.Models.Passengers.PassengerDetialsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PassengerDetailsViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdC)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdC)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+    </dl>
+</div>
+
+<h4>Number of Flight: @Model.Flights.Count()</h4>
+
+@await Html.PartialAsync("_Flights",Model.Flights,new ViewDataDictionary(ViewData) { { "IdC", Model.IdC } } )
+
+@*<partial name="_Flights" for="Flights" />*@
+@*<partial name="_Flights" model=" @Model.Flights" view-data='@new ViewDataDictionary(ViewData) { { "IdC", Model.IdC } }' />*@
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdC }) |
+    <a asp-action="Index">Back to List</a>
+</div>

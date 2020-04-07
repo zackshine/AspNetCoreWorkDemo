@@ -1,0 +1,50 @@
+﻿@model IList<FileInfo>
+
+
+<form method="POST"  enctype="multipart/form-data">
+
+    <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+
+        <thead>
+
+            <tr>
+
+                <th> Document</th>
+
+                <th> Submitted </th>
+
+                <th> Date Submitted </th>
+
+                <th> # </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td> <input type="text" placeholder="title" asp-for="@Model[0].Title" value="enter">  </td>
+                <td><input type="text" placeholder="Description" asp-for="@Model[0].Description" value="enter1"> </td>
+                <td>  </td>
+
+                <td>
+                    <input type="file" class="" asp-for="@Model[0].File" value="Upload">
+                </td>
+            </tr>
+            <tr>
+                <td> <input type="text" placeholder="title" asp-for="@Model[1].Title" value="enter2"> </td>
+                <td><input type="text" placeholder="Description" asp-for="@Model[1].Description" value="enter3"> </td>
+                <td>  </td>
+
+                <td>
+                    <input type="file" class="" asp-for="@Model[1].File" value="Upload">
+                </td>
+            </tr>
+
+         
+        </tbody>
+    </table>'
+    <button type="submit" asp-controller="Home" asp-action="Wazobia" class="btn green button-submit">
+        Submit
+        <i class="fa fa-check"></i>
+    </button>
+</form>
+

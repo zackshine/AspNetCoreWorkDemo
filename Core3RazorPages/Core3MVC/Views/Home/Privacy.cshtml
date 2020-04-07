@@ -1,0 +1,48 @@
+﻿@model Department
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["session"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+<a class="nav-link text-dark" asp-area="Dashboard" asp-controller="Home" asp-action="Index">ProductManagement</a>
+
+<environment include="fdsfdfds">
+    <div class="warning">Testing Environments</div>
+</environment>
+@Html.DropDownListFor(model => model.DepartmentName, new SelectList(ViewBag.Departments, "DepartmentName", "DepartmentName"))
+<form id="search" asp-action="privacy">
+
+    <input type="hidden" id="changedDropdown" name="changedDropdown" value="NONE">
+    @Html.DropDownList("DepartmentName", (IEnumerable<SelectListItem>)ViewBag.originalStationsList, new { @class = "dropdown-stations", @id = "DepartmentName", onChange = "onSelectedIndexChanged(event)" })
+</form>
+
+
+@section Scripts{
+    <script>
+        $(function () {
+
+            var WebServiceURL = 'https://localhost:44330/api/values/ForwardInfo';
+            var objSendData = {
+                zipcode: "123",
+                searchRadius: 5,
+                ProductCodes: "001"
+            };
+            $.ajax({
+                type: "POST",
+                url: WebServiceURL,
+                data: JSON.stringify(objSendData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) { },
+                failure: function () { }
+            })
+        });
+
+        function onSelectedIndexChanged(e) {
+            console.log(e.target.id);
+            document.getElementById('changedDropdown').value = e.target.id;
+            document.getElementById('search').submit();
+        }
+    </script>
+}

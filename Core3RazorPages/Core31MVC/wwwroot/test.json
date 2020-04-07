@@ -1,0 +1,56 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "__name__": "wmi_logical_disk_free_bytes",
+          "instance": "192.168.1.71:9182",
+          "job": "prometheus",
+          "volume": "C:"
+        },
+        "value": [
+          1582530372.189,
+          "67817701376"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "wmi_logical_disk_free_bytes",
+          "instance": "192.168.1.71:9182",
+          "job": "prometheus",
+          "volume": "D:"
+        },
+        "value": [
+          1582530372.189,
+          "13367246848"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "wmi_logical_disk_free_bytes",
+          "instance": "192.168.1.71:9182",
+          "job": "prometheus",
+          "volume": "HarddiskVolume1"
+        },
+        "value": [
+          1582530372.189,
+          "68157440"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "wmi_logical_disk_free_bytes",
+          "instance": "192.168.1.71:9182",
+          "job": "prometheus",
+          "volume": "HarddiskVolume3"
+        },
+        "value": [
+          1582530372.189,
+          "365953024"
+        ]
+      }
+    ]
+  }
+}

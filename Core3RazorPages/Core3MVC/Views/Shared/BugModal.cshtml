@@ -1,0 +1,72 @@
+﻿@model BugViewModel
+
+<div class="modal fade" id="bugModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Bug Reporting Tool</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <form id="myForm" asp-controller="Home" asp-action="SendBugReport" enctype="multipart/form-data">
+                <div id="result"></div>
+                <div class="modal-body">
+                    <label asp-for="Description" class="control-label"></label>
+                    <textarea asp-for="Description" class="form-control"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+
+                    <label asp-for="FormFile" class="control-label"></label><br />
+                    <input asp-for="FormFile" id="FormFile" name="FormFile" type="file" />
+                    <span asp-validation-for="FormFile" class="text-danger"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+                    <button type="button" id="BugReportBtn" class="btn btn-success">Bug Report senden</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script>
+    $('#BugReportBtn').on('click', function (event) {
+
+        //$("#myForm").submit(function (e) {
+
+        // e.preventDefault(); // avoid to execute the actual submit of the form.
+
+
+        var url = "/Home/SendBugReport";
+
+        var description = document.getElementById("Description").value;
+        var fileInput = $('#FormFile')[0];
+        var formFile = fileInput.files[0];
+
+        var formData = new FormData();
+        formData.append("Description", description);
+        formData.append("FormFile", formFile);
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: formData,
+            dataType: "json",
+            processData:false,
+            contentType: false,
+            success: function (data) {
+                if (!data.isError) {
+                    $("#result").html("<span class='border border-success text-success'>" + data.message + "</span>");
+                } else {
+                    $("#result").html("<span class='border border-danger text-danger'>" + data.message + "</span>");
+                }              
+                $('#bugModal').modal('show');
+
+            }
+           
+        });
+
+
+    });
+</script>

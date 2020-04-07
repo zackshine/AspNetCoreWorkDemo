@@ -1,0 +1,17 @@
+﻿@model Model1
+@{
+    ViewData["Title"] = "MyModel";
+}
+
+<h1>MyModel</h1>
+<div class="row">
+    <div class="col-10 propertiesdiv">
+        <label><b>Saved Criteria: </b></label><br />
+        <select class="form-control col-4 d-inline" asp-for="Criteria" >
+            <option>sss</option>
+            <option>ddd</option>
+        </select>
+    </div>
+</div>
+<br />
+<partial name="_testPartial" model="Model.Criteria" />

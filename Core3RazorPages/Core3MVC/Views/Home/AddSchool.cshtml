@@ -1,0 +1,91 @@
+﻿
+    @model SchoolViewModel
+    <h1>AddSchool</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <form>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label class="control-label">School Name</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Student Name
+                            </th>
+                            <th>
+                                Student Age
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentList"></tbody>
+                </table>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Some Modal</button>
+                </div>
+                <div class="form-group">
+                    <input type="button" id="create" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <partial name="_AddStudentPartial" />
+
+    @section Scripts{
+        <script>
+            $(function () {
+                $("#tags").empty();
+                //append students to table
+                $('#addStudent').on('click', function () {
+                    var name = $('#tempName').val();
+                    var age = $('#tempAge').val();
+
+                    $('<tr><td>' + name + '</td>' +
+                        '<td>' + age + '</td>' +
+                        '</tr>').appendTo($('#studentList'));
+
+                    $('#exampleModal').modal('hide');
+                    document.getElementById("tempName").value = "";
+                    document.getElementById("tempAge").value = "";
+                });
+
+                $('#create').on('click', function () {
+               
+                    var formData = new FormData();
+                    var schoolName = $('#Name').val();
+                    formData.append("name", schoolName);
+                   
+
+                    $("#studentList tr").each(function (i) {
+                        $("td", this).each(function (j) {
+                            if (j == 0) {
+                                formData.append("Students[" + i + "].StudentsName", $(this).text());
+                            } else {
+                                formData.append("Students[" + i + "].Age", $(this).text());
+                            }
+                        });
+                    });
+                  
+                    console.log(formData);
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/Home/AddSchool",
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function (data) {
+                      
+
+                        }
+
+                    });
+                });
+            });
+        </script>
+    }
+

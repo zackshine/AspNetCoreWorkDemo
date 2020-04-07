@@ -1,0 +1,37 @@
+﻿<form class="submitform">
+    <div class="input-group">
+        <input type="file" class="custom-file-input" id="fileInput"
+               aria-describedby="fileInput" />
+        <label class="custom-file-label" for="fileInput">Choose file</label>
+    </div>
+    <div class="modal-footer row">
+        <button type="submit" class="btn btn-primary" id="submitAddFile">Submit</button>
+    </div>
+   
+</form>
+
+@section Scripts{ 
+    <script>
+        $('#submitAddFile').click(function (e) {
+            e.preventDefault();
+            var file = $('#fileInput')[0].files;
+            var formData = new FormData();
+            formData.append("myFile", file[0]);
+       
+
+            $.ajax({
+                type: "POST",
+                url: "/Home/Login",
+                contentType: false,
+                processData: false,
+                data: formData,
+                success: function (result) {
+                    alert("success");
+                },
+                error: function () {
+                    alert("there was an error");
+                }
+            });
+        })
+    </script>
+}

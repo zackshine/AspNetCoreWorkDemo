@@ -1,0 +1,8 @@
+﻿@model CMyViewModel
+
+<div>@Model.ProductName</div>
+<div>@Model.ProductDescription</div>
+<form method="post" asp-area="" asp-controller="Home" asp-action="Cart">
+    <input asp-for="ProductQuantity" />
+    <button type="submit">Update</button>
+</form>

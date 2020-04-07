@@ -1,0 +1,118 @@
+﻿@*@model Core31MVC.Models.Product
+
+    @{
+        ViewData["Title"] = "Create";
+    }
+
+    <h1>Create</h1>
+
+    <h4>Product</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="ProductName" class="control-label"></label>
+                    <input asp-for="ProductName" class="form-control" />
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductSubcategoryID" class="control-label"></label>
+                    <select asp-for="ProductSubcategoryID" class ="form-control" asp-items="ViewBag.ProductSubcategoryID"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>*@
+    @model Core31MVC.Controllers.CreateProductViewModel
+
+    @{
+        ViewData["Title"] = "Create";
+
+    }
+
+    <h1>Create</h1>
+
+    <h4>Product</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Product.ProductName" class="control-label"></label>
+                    <input asp-for="Product.ProductName" class="form-control" />
+                    <span asp-validation-for="Product.ProductName" class="text-danger"></span>
+                </div>
+
+                @*<div class="form-group">
+            <label asp-for="Product.ProductSubcategoryID" class="control-label"></label>
+            <input asp-for="Product.ProductSubcategoryID" class="form-control" />
+            @Html.DropDownListFor(s => s.Product.ProductSubcategoryID,
+                new SelectList(Model.ProductSubcategories, "ProductSubcategoryID", "ProductSubcategoryDescription"),
+                "Select Subcategory", new { @class = "form-control" })
+            <span asp-validation-for="Product.ProductSubcategoryID" class="text-danger"></span>
+        </div>*@
+                <div class="row">
+                    <div class="col-xs-10 multiSelectCheckboxDiv" id="multiSelectCheckboxDiv">
+                        <span class="col1 contrlLabel" style=" font-family:calibri;color:gray;font-size:15px">Clients<span style="font-weight:800;color:red;">*</span>:</span>
+                        @Html.DropDownList("StateName1", Model.State, "Select State", new { @class = "form-control" })
+                        <div class="input-validation-errorText col-md-6" style="display:none;">
+                            Please select state.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Product.ProductSubcategory.ParentCategoryID" class="control-label"></label>
+                    <!--<input asp-for="ProductSubcategoryID" class="form-control" />-->
+                    @Html.DropDownListFor(c => c.Product.ProductSubcategory.ParentCategoryID,
+                    new SelectList(Model.ParentCategories, "ParentCategoryID", "ParentCategoryDescription"),
+                    "Select Category", new { @class = "form-control", @id = "parentlist" })
+                    <span asp-validation-for="Product.ProductSubcategory.ParentCategoryID" class="text-danger"></span>
+                </div>
+                <div>
+                    <select name="Product.ProductSubcategoryID" id="sublist" class="form-control"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+        <script type="text/javascript">
+            //Insert default item "Select" in dropdownlist on load
+            $(document).ready(function () {
+                var items = "<option value='0'>Select</option>";
+                $("#sublist").html(items);
+            });
+
+            //Bind City dropdownlist
+            $("#parentlist").change(function () {
+                var parentCategoryId = $("#parentlist").val();
+                var url = "/Products/GetSubCategoryList";
+
+                $.getJSON(url, { ParentCategoryId: parentCategoryId }, function (data) {
+                    var item = "";
+                    $("#sublist").empty();
+                    $.each(data, function (i, subCategory) {
+                        item += '<option value="' + subCategory.productSubcategoryID  + '">' + subCategory.productSubcategoryDescription  + '</option>'
+                    });
+                    $("#sublist").html(item);
+                });
+            });
+        </script>
+    }

@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Core22MVCIdentity.Areas.Document.Controllers.LocalUserViewModel
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<input type="button" class="btn btn-outline-success" onclick="validateData();" value="Agregar al carrito" />
+<input type="button" class="btn btn-outline-success" onclick="Test();" value="XMLHttpRequest" />
+
+@using (Html.BeginForm("RemoveAll", "UserDocumentCategory", new { area = "Document" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.Id, new { id = "ra-id" })
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="clearfix">
+                    <div class="pull-right">
+                        <input name="data" />
+                        <input type="submit" value="Add All" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts
+    {
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    @* <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>*@
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
+
+    <script type="text/javascript">
+    function validateData() {
+
+        let sesion = @ViewData["Session"];
+
+        if (sesion == 0) {
+            Swal.fire({
+                type: 'error',
+                title: 'Oops...',
+                text: '¡Usted no ha iniciado sesión!',
+                footer: '<a asp-controller="Home" asp-action="Login">Iniciar sesión</a>'
+            })
+
+        }
+        }
+
+        function Test() {
+            var xmlhttp = new XMLHttpRequest();
+            var url = "/Home/Test";
+            var input = {};
+            input.serverName = "localhost";
+            input.port = 5000;
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var jsResp = JSON.parse(xmlhttp.responseText);
+                    if (jsResp.Status == "Success") {
+                        //show success
+                    }
+                    else {
+                        //show error
+                    }
+                }
+            }
+            xmlhttp.open("POST", url, true);
+            xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xmlhttp.send(JSON.stringify(input));
+        }
+    </script>
+}

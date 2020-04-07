@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+ 
+  <ItemGroup>
+    <Reference Include="Core22MVCIdentity">
+     
+      <HintPath>..\Core22MVCIdentity\bin\Debug\netcoreapp2.2\Core22MVCIdentity.dll</HintPath>
+    </Reference>
+    <!--<ProjectReference Include="..\Core22MVCIdentity\bin\Debug\netcoreapp2.2\Core22MVCIdentity.dll" />-->
+  </ItemGroup>
+  <!--<Target Name="MyPreCompileTarget" BeforeTargets="Build">
+    <Exec WorkingDirectory="$(ProjectDir)" Command="node_modules\.bin\gulp" />
+  </Target>-->
+
+</Project>

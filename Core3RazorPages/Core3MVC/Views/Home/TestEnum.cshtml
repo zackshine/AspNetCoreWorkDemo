@@ -1,0 +1,58 @@
+﻿@model AttributeName
+@{
+    ViewData["Title"] = "TestEnum";
+}
+
+<h1>TestEnum</h1>
+
+@*<div class="row">
+    <div class="col-md-4">
+        <form asp-action="TestEnum" method="get">
+            <select id="mySelect" class="custom-select" asp-for="searchText" value="@(ViewBag.CurrentFilter)">
+                <option value="">All</option>
+                <option value="AA">AA</option>
+                <option value="AE">AE</option>
+                <option value="AR">AR</option>
+            </select>
+
+            <div class="col-md-12">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </form>
+        <a href ="@Url.Action("TestEnum", new { currentFilter = ViewBag.CurrentFilter})">Test</a>
+    </div>
+</div>*@
+
+    <form asp-action="SumEnumCheckBox" method="post">
+        <div class="checkboxContainer">
+
+            <label class="checkbox">
+                <input type="checkbox" name="myModel.AppliesOn" class="appliesOnField" id="" value="1" />@Core3MVC.Controllers.AppliesOn.Physical
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" name="myModel.AppliesOn" class="appliesOnField" id="" value="2" />@Core3MVC.Controllers.AppliesOn.Sendings
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" name="myModel.AppliesOn" class="appliesOnField" id="" value="4" />@Core3MVC.Controllers.AppliesOn.Billing
+            </label>
+            <div class="col-md-12">
+                <button class="btn btn-primary" type="submit">Send</button>
+            </div>
+        </div>
+    </form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+       <script>
+           @*$(document).ready(function () {
+               var data = '@ViewBag.CurrentFilter';
+               console.log(data);
+               document.getElementById("mySelect").value = data;
+           });*@
+       </script>
+    }
+

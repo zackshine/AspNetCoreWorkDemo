@@ -1,0 +1,9 @@
+C:\Workspace\aspcore3Practice\Core3RazorPages\xxx\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\xxx\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\xxx\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\xxx\bin\Debug\netcoreapp3.1\xxx.exe
+C:\Workspace\aspcore3Practice\Core3RazorPages\xxx\obj\Debug\netcoreapp3.1\xxx.AssemblyInfoInputs.cache
+C:\Workspace\aspcore3Practice\Core3RazorPages\xxx\obj\Debug\netcoreapp3.1\xxx.AssemblyInfo.cs
+C:\Workspace\aspcore3Practice\Core3RazorPages\xxx\obj\Debug\netcoreapp3.1\xxx.RazorTargetAssemblyInfo.cache
+C:\Workspace\aspcore3Practice\Core3RazorPages\xxx\obj\Debug\netcoreapp3.1\staticwebassets\xxx.StaticWebAssets.Manifest.cache
+C:\Workspace\aspcore3Practice\Core3RazorPages\xxx\obj\Debug\netcoreapp3.1\staticwebassets\xxx.StaticWebAssets.xml

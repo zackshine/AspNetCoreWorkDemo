@@ -1,0 +1,85 @@
+﻿@model List<Core3MVC.Models.App>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model[0].MonAlertsID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].AppName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].AlertType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Active)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@for (int i= 0;i< Model.Count();i++) {
+        <tr>
+            <td>
+                @Model[i].AppName
+            </td>
+            <td>
+                @Model[i].MonAlertsID
+            </td>
+            <td>
+                @Model[i].AlertType
+            </td>
+
+    <td>
+        <form class="form-inline ml-auto" asp-action="Alerts2" method="POST">
+            <input type="hidden" name="AppName" value="@Model[i].AppName" />
+            <input type="hidden" name="MonAlertsID" value="@Model[i].MonAlertsID" />
+            @if (@Model[i].Active)
+            {
+
+                <button type="submit" name="changetoinactive" class="btn btn-success btn-raised btn-fab btn-fab-mini btn-round">
+
+                    <i class="material-icons">done</i>
+                </button>
+            }
+            @if (!@Model[i].Active)
+            {
+                <button type="submit" name="notactive" id="notactive" class="btn btn-danger btn-raised btn-fab btn-fab-mini btn-round">
+                    <i class="material-icons">clear</i>
+                </button>
+            }
+
+       
+        </form>
+        @*<a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>*@
+    </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts{ 
+<style>
+    select {
+    width: 100px !important;
+    word-wrap: break-word;
+}
+
+/*#meselectt option {
+    background-color:yellow;
+    width: 100px ;
+    word-wrap: break-word;
+}*/
+</style>
+}

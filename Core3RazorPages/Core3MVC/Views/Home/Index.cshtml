@@ -1,0 +1,45 @@
+﻿@model Core3MVC.Controllers.NameModel
+@{
+    ViewData["Title"] = "Home Page";
+    var bug = new BugViewModel();
+    //var data = Model.Name;
+    //string s = data.Substring(data.IndexOf("wwwroot")).Substring(7);
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<img src="@Url.Content("\\ArchivosLibros\\Libros\\title_name\\filename.png")" />
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bugModal">
+    Delete
+</button>
+<p id="demo"></p>
+<partial name="BugModal" model="@bug" />
+
+@section Scripts{
+    <link rel="stylesheet" href="/Dashboard/Content/MyStyleSheet.css" />
+    <script>
+        $(function () {
+            const x = (x, y) => x * y;
+            document.getElementById("demo").innerHTML = x(5, 5);
+            $.ajax({
+                type: "GET",
+                url: "/Home/GetJsonValue"
+
+            }).done(
+                function (data) {
+                    console.log(data);
+                });
+
+            fetch("/Home/GetJsonValue")
+                .then((response) => {
+                    return response.json();
+                })
+                .then((myJson) => {
+                    console.log(myJson);
+                });
+        })
+    </script>
+}

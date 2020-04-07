@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Core31MVC.Models.Product>
+@using Microsoft.AspNetCore.Http.Extensions
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductSubcategory)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductSubcategory.ProductSubcategoryDescription)
+                </td>
+                <td>
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.ProductID">Edit</a> @("|")
+                        <a asp-action="Details" asp-route-id="@item.ProductID">Details</a> @("|")
+                        <a asp-action = "Delete" asp-route-id = "@item.ProductID"> Delete </a> 
+                    }
+
+                    @{
+                        var name = System.Net.WebUtility.UrlEncode(item.ProductName);
+                    }
+                    <a href="https://stackoverflow.com/users/@name">
+                        @Html.DisplayFor(modelItem => item.ProductName)
+
+                    </a>
+                    @*@Html.ActionLink("Products", "GetProductsDetail", new { id = item.ProductID }) |*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

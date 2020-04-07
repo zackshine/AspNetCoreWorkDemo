@@ -1,0 +1,17 @@
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\bin\Debug\netcoreapp2.2\Core22APITest.deps.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\bin\Debug\netcoreapp2.2\Core22APITest.runtimeconfig.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\bin\Debug\netcoreapp2.2\Core22APITest.runtimeconfig.dev.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\bin\Debug\netcoreapp2.2\Core22APITest.dll
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\bin\Debug\netcoreapp2.2\Core22APITest.pdb
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\obj\Debug\netcoreapp2.2\Core22APITest.RazorAssemblyInfo.cache
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\obj\Debug\netcoreapp2.2\Core22APITest.RazorAssemblyInfo.cs
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\obj\Debug\netcoreapp2.2\Core22APITest.AssemblyInfoInputs.cache
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\obj\Debug\netcoreapp2.2\Core22APITest.AssemblyInfo.cs
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\obj\Debug\netcoreapp2.2\Core22APITest.RazorTargetAssemblyInfo.cache
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\obj\Debug\netcoreapp2.2\Core22APITest.dll
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\obj\Debug\netcoreapp2.2\Core22APITest.pdb
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\obj\Debug\netcoreapp2.2\Core22APITest.csprojAssemblyReference.cache
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core22APITest\obj\Debug\netcoreapp2.2\Core22APITest.genruntimeconfig.cache

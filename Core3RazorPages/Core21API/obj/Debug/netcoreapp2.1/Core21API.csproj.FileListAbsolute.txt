@@ -1,0 +1,17 @@
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\bin\Debug\netcoreapp2.1\Core21API.deps.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\bin\Debug\netcoreapp2.1\Core21API.runtimeconfig.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\bin\Debug\netcoreapp2.1\Core21API.runtimeconfig.dev.json
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\bin\Debug\netcoreapp2.1\Core21API.dll
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\bin\Debug\netcoreapp2.1\Core21API.pdb
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\obj\Debug\netcoreapp2.1\Core21API.csprojAssemblyReference.cache
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\obj\Debug\netcoreapp2.1\Core21API.RazorAssemblyInfo.cache
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\obj\Debug\netcoreapp2.1\Core21API.RazorAssemblyInfo.cs
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\obj\Debug\netcoreapp2.1\Core21API.AssemblyInfoInputs.cache
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\obj\Debug\netcoreapp2.1\Core21API.AssemblyInfo.cs
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\obj\Debug\netcoreapp2.1\Core21API.RazorTargetAssemblyInfo.cache
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\obj\Debug\netcoreapp2.1\Core21API.dll
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\obj\Debug\netcoreapp2.1\Core21API.pdb
+C:\Workspace\aspcore3Practice\Core3RazorPages\Core21API\obj\Debug\netcoreapp2.1\Core21API.genruntimeconfig.cache
