@@ -14,7 +14,7 @@
   "author": "anuraj",
   "license": "MIT",
   "devDependencies": {
-    "gulp": "3.9.1",
+    "gulp": "4.0.2",
     "gulp-less": "3.3.2",
     "gulp-clean-css": "3.9.0"
   }
